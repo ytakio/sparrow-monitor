@@ -1,5 +1,7 @@
 # sparrow-monitor
 
+## ffmpeg patch
+
 ```diff
 diff --git a/libavcodec/v4l2_m2m_enc.c b/libavcodec/v4l2_m2m_enc.c
 index e08db5d5d3..e707368da4 100644
@@ -13,4 +15,11 @@ index e08db5d5d3..e707368da4 100644
 
      av_log(avctx, AV_LOG_DEBUG,
          "Encoder Context: id (%d), profile (%d), frame rate(%d/%d), number b-frames (%d), "
+```
+
+## usage
+
+```sh
+./http.sh &
+./encode.sh
 ```
