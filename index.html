@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sparrow Monitor</title>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  </head>
+  <body>
+    <video id="live" controls></video>
+    <script>
+      var video = document.getElementById('live');
+      var videoSrc = './out.m3u8';
+      if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource(videoSrc);
+          hls.attachMedia(video);
+      }
+      else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+          video.src = videoSrc;
+      }
+    </script>
+  </body>
+</html>
